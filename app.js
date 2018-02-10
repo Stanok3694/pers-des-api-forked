@@ -1,9 +1,14 @@
 var express = require('express');
 var app = express();
 
+var mongoose = require('mongoose');
+
 var workers = require('./routers/workers');
 var objects = require('./routers/objects');
 var customers = require('./routers/customers');
+
+// need start mongodb
+mongoose.connect('mongodb://localhost:27017');
 
 app.use('/workers', workers);
 app.use('/objects', objects);

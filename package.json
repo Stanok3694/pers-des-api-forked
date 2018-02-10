@@ -17,6 +17,7 @@
   },
   "homepage": "https://github.com/Stanok3694/pers-des-api#readme",
   "dependencies": {
-    "express": "^4.16.2"
+    "express": "^4.16.2",
+    "mongoose": "^5.0.4"
   }
 }
