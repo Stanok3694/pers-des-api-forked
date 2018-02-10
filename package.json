@@ -1,0 +1,22 @@
+{
+  "name": "pers-des-api",
+  "version": "0.0.1",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Stanok3694/pers-des-api.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Stanok3694/pers-des-api/issues"
+  },
+  "homepage": "https://github.com/Stanok3694/pers-des-api#readme",
+  "dependencies": {
+    "express": "^4.16.2"
+  }
+}
