@@ -13,4 +13,8 @@ var workerSchema = new Schema({
     phoneNumber: String, // SO: 'cause +7(903)-xxx-xx-xx <- need to think about format;
 });
 
+workerSchema.query.byName = function (name) {
+    return this.find({ firstName: new RegExp(name, 'i') });
+}
+
 module.exports = workerSchema;

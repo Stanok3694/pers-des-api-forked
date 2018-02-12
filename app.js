@@ -7,8 +7,17 @@ var workers = require('./routers/workers');
 var objects = require('./routers/objects');
 var customers = require('./routers/customers');
 
+// SO: mocked data:
+var IvanMock = require('./mocks/simpleWorkerDoc');
+
 // SO: need move localhost url to server.config.js
 mongoose.connect('mongodb://localhost:27017');
+
+// SO: don't need yet - Ivan already saved.
+// IvanMock.save(function(err){
+//     if (err) return console.log(err);
+//     console.log('IvanMock saved!');
+// });
 
 app.use('/workers', workers);
 app.use('/objects', objects);
