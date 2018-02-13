@@ -3,9 +3,7 @@ var app = express();
 
 var mongoose = require('mongoose');
 
-var workers = require('./routers/workers');
-var objects = require('./routers/objects');
-var customers = require('./routers/customers');
+var api = require('./routers/api');
 
 // SO: mocked data:
 var IvanMock = require('./mocks/simpleWorkerDoc');
@@ -19,9 +17,7 @@ mongoose.connect('mongodb://localhost:27017');
 //     console.log('IvanMock saved!');
 // });
 
-app.use('/workers', workers);
-app.use('/objects', objects);
-app.use('/customers', customers);
+app.use('/api', api);
 
 app.get('/', (req, res) => {
     res.send('Entry point');
