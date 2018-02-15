@@ -24,18 +24,24 @@ router.get('/getAllWorkers', (req, res) => {
 });
 
 router.post('/createWorker', (req, res) => {
-    console.log(req);
-    
-    // workerModel.create({
+    const worker = req.body;
+    workerModel.create({ 
+        firstName: worker.firstName,
+        secondName: worker.secondName,
+        lastName: worker.lastName,
+        age: worker.age,
+        district: worker.district,
+        position: worker.position,
+        skills: JSON.parse(worker.skills),
+        phoneNumber: worker.phoneNumber,
+    }, (err, worker) => {
+        if (err) {
+            console.log(err);
+            return;
+        }
 
-    // }, (err, worker) => {
-    //     if (err) {
-    //         console.log(err);
-    //         return;
-    //     }
-
-    //     res.send(`Successfully created: ${worker}`);
-    // });
+        res.send(`Successfully created: ${worker}`);
+    });
 });
 
 module.exports = router;

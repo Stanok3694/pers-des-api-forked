@@ -1,21 +1,14 @@
-var express = require('express');
-var app = express();
+const express = require('express');
+const app = express();
+const bodyParser = require('body-parser');
+const mongoose = require('mongoose');
 
-var mongoose = require('mongoose');
-
-var api = require('./routers/api');
-
-// SO: mocked data:
-var IvanMock = require('./mocks/simpleWorkerDoc');
+const api = require('./routers/api');
 
 // SO: need move localhost url to server.config.js
 mongoose.connect('mongodb://localhost:27017');
 
-// SO: don't need yet - Ivan already saved.
-// IvanMock.save(function(err){
-//     if (err) return console.log(err);
-//     console.log('IvanMock saved!');
-// });
+app.use(bodyParser.json());
 
 app.use(api);
 
