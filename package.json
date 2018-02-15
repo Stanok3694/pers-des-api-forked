@@ -4,7 +4,7 @@
   "description": "",
   "main": "app.js",
   "scripts": {
-    "test": "test"
+    "test": "jest"
   },
   "repository": {
     "type": "git",
@@ -20,5 +20,8 @@
     "body-parser": "^1.18.2",
     "express": "^4.16.2",
     "mongoose": "^5.0.4"
+  },
+  "devDependencies": {
+    "jest": "^22.3.0"
   }
 }
