@@ -17,7 +17,7 @@ mongoose.connect('mongodb://localhost:27017');
 //     console.log('IvanMock saved!');
 // });
 
-app.use('/api', api);
+app.use(api);
 
 app.get('/', (req, res) => {
     res.send('Entry point');

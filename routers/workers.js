@@ -10,9 +10,9 @@ router.get('/', (req, res) => {
 
 router.get('/getAllWorkers', (req, res) => {
     // SO: need to think about rework that from callback to promise!
-    workerModel.find((err, workers) => {
+    workerModel.find().lean().exec((err, workers) => {
         if (err) return console.log(err);
-        
+
         const results = prepareWorkersData(workers);
         
         if (results.length > 0) {
