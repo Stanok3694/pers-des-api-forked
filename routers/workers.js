@@ -4,6 +4,7 @@ const router = express.Router();
 const workerModel = require('../dal/models/worker.model');
 const prepareWorkersData = require('../middleware/prepareWorkersData');
 const checkResults = require('../middleware/checkResults');
+const parseStringToArray = require('../middleware/parseStringToArray');
 
 router.get('/', (req, res) => {
     res.send('You are in the workers section');
@@ -25,6 +26,8 @@ router.get('/getAllWorkers', (req, res) => {
 
 router.post('/createWorker', (req, res) => {
     const worker = req.body;
+    const skills = parseStringToArray(worker.skills);
+
     workerModel.create({ 
         firstName: worker.firstName,
         secondName: worker.secondName,
@@ -32,7 +35,7 @@ router.post('/createWorker', (req, res) => {
         age: worker.age,
         district: worker.district,
         position: worker.position,
-        skills: JSON.parse(worker.skills),
+        skills: [...skills],
         phoneNumber: worker.phoneNumber,
     }, (err, worker) => {
         if (err) {
