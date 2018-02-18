@@ -1,7 +1,7 @@
 const router = require('express').Router();
 
-import { workerModel } from "../dal";
-import { checkResults, prepareWorkersData, parseStringToArray } from "../middleware";
+import { workerModel } from "../../dal";
+import { checkResults, prepareWorkersData, parseStringToArray } from "../../middleware";
 
 router.get('/', (req, res) => {
     res.send('You are in the workers section');
@@ -21,6 +21,7 @@ router.get('/getAllWorkers', (req, res) => {
         });
 });
 
+// SO: need to add passData creation!
 router.post('/createWorker', (req, res) => {
     const worker = req.body;
     const skills = parseStringToArray(worker.skills);
@@ -43,5 +44,9 @@ router.post('/createWorker', (req, res) => {
         res.send(`Successfully created: ${worker}`);
     });
 });
+
+router.get('/getPassData', (req, res) => {
+    
+})
 
 module.exports = router;
