@@ -8,6 +8,10 @@ const entry = require('./routers/entry');
 mongoose.connect('mongodb://localhost:27017');
 
 app.use(bodyParser.json());
+app.use(bodyParser.urlencoded());
+app.use(bodyParser.text());
+app.use(bodyParser.raw());
+
 app.use(entry);
 
 app.get('/', (req, res) => {
