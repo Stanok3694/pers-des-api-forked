@@ -1,11 +1,11 @@
 const router = require('express').Router();
 
-import { workerModel, } from "../../../dal";
+import { workerBaseModel, } from "../../../dal";
 import { prepareWorkersData, checkResults, } from "../../../middleware";
 
 router.get('/', (req, res) => {
     // SO: need to think about rework that from callback to promise!
-    workerModel
+    workerBaseModel
         .find().lean().exec((err, workers) => {
             if (err) {
                 console.log(err);

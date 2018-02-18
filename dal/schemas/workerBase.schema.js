@@ -1,7 +1,7 @@
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
-const workerSchema = new Schema({
+const workerBase = new Schema({
     firstName: String,
     secondName: String,
     lastName: String,
@@ -12,4 +12,4 @@ const workerSchema = new Schema({
     phoneNumber: String, // SO: 'cause +7(903)-xxx-xx-xx <- need to think about format;
 });
 
-module.exports = workerSchema;
+module.exports = workerBase;

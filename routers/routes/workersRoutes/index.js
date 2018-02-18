@@ -1,11 +1,11 @@
 const getAllWorkers = require('./getAllWorkers');
-const getPassData = require('./getPassData');
+const getWorkerById = require('./getWorkerById');
 const createWorker = require('./createWorker');
 const deleteWorkerById = require('./deleteWorkerById');
 
 export {
     getAllWorkers,
-    getPassData,
+    getWorkerById,
     createWorker,
     deleteWorkerById,
 };

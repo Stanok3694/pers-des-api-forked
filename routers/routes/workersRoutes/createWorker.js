@@ -1,6 +1,6 @@
 const router = require('express').Router();
 
-import { workerModel, passDataModel, } from "../../../dal";
+import { workerBaseModel, workerDataModel, } from "../../../dal";
 import { checkResults, parseStringToArray, } from "../../../middleware";
 
 router.post('/', (req, res) => {
@@ -11,7 +11,7 @@ router.post('/', (req, res) => {
     const works = parseStringToArray(passData.works);
     const payments = parseStringToArray(passData.payments);
 
-    workerModel.create({ 
+    workerBaseModel.create({ 
         firstName: worker.firstName,
         secondName: worker.secondName,
         lastName: worker.lastName,
@@ -26,7 +26,7 @@ router.post('/', (req, res) => {
             return;
         }
         // SO: callback hell starts here <- need to rework! have to! ToDo!
-        passDataModel.create({
+        workerDataModel.create({
             workerId: worker._id,
             firstName: worker.firstName,
             secondName: worker.secondName,

@@ -1,7 +1,7 @@
-const workerModel = require('./models/worker.model');
-const passDataModel = require('./models/passData.model');
+const workerBaseModel = require('./models/workerBase.model');
+const workerDataModel = require('./models/workerData.model');
 
 export {
-    workerModel,
-    passDataModel,
+    workerBaseModel,
+    workerDataModel,
 };

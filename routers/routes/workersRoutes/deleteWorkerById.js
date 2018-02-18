@@ -1,17 +1,17 @@
 const router = require('express').Router();
 
-import { workerModel, passDataModel, } from "../../../dal";
+import { workerBaseModel, workerDataModel, } from "../../../dal";
 import { checkResults, } from "../../../middleware";
 
 router.delete('/', (req, res) => {
     const workerId = req.body.workerId;
-    workerModel
+    workerBaseModel
         .findByIdAndRemove(workerId, err => {
             if (err) {
                 console.log(err);
                 return;
             } else {
-                passDataModel.findOneAndRemove({ workerId }, err => {
+                workerDataModel.findOneAndRemove({ workerId }, err => {
                     if (err) {
                         console.log(err);
                         return;
