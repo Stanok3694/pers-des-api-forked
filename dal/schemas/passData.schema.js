@@ -1,7 +1,7 @@
-var mongoose = require('mongoose');
-var Schema = mongoose.Schema;
+const mongoose = require('mongoose');
+const Schema = mongoose.Schema;
 
-var workerPassportData = new Schema({
+const workerPassportData = new Schema({
     firstName: String,
     secondName: String,
     lastName: String,
@@ -11,7 +11,8 @@ var workerPassportData = new Schema({
     codeOfPassportTable: String, // SO: related to prev field;
     passportStartDate: Date,
     relationship: String,
-   // SO: and so on, need to confirm with customer; 
+    works: Array,   // SO: need to confirm about format
+    payments: Array, // SO: need to confirm about format 
 });
 
 module.exports = workerPassportData;
