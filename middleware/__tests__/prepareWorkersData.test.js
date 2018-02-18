@@ -1,4 +1,4 @@
-const prepareWorkersData = require('./prepareWorkersData');
+const prepareWorkersData = require('../prepareWorkersData');
 
 const workers = [
     {

@@ -1,4 +1,4 @@
-const checkReslts = require('./checkResults');
+const checkReslts = require('../checkResults');
 const noResultsMessage = "You have no data in database";
 
 const zeroArr = [];
