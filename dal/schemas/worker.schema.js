@@ -1,20 +1,15 @@
-var mongoose = require('mongoose');
-var Schema = mongoose.Schema;
+const mongoose = require('mongoose');
+const Schema = mongoose.Schema;
 
-// SO: how can i make this more elegant? 'cause I have separate scheme for passport data...
-var workerSchema = new Schema({
+const workerSchema = new Schema({
     firstName: String,
     secondName: String,
     lastName: String,
     age: Number,
     district: String,
     position: String, // SO: casual worker, professional and so on;
-    skills: Array,
+    skills: Array, // SO: array of strings
     phoneNumber: String, // SO: 'cause +7(903)-xxx-xx-xx <- need to think about format;
 });
-
-workerSchema.query.byName = function (name) {
-    return this.find({ firstName: new RegExp(name, 'i') });
-}
 
 module.exports = workerSchema;
