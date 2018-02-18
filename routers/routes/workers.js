@@ -1,52 +1,12 @@
 const router = require('express').Router();
 
-import { workerModel } from "../../dal";
-import { checkResults, prepareWorkersData, parseStringToArray } from "../../middleware";
+import { getAllWorkers, getPassData, createWorker, } from "./workersRoutes";
 
-router.get('/', (req, res) => {
-    res.send('You are in the workers section');
-});
+import { workerModel, passDataModel, } from "../../dal";
+import { checkResults, parseStringToArray } from "../../middleware";
 
-router.get('/getAllWorkers', (req, res) => {
-    // SO: need to think about rework that from callback to promise!
-    workerModel
-        .find().lean().exec((err, workers) => {
-            if (err) {
-                console.log(err);
-                return;
-            }
-
-            const results = prepareWorkersData(workers);
-            res.send(checkResults(results));
-        });
-});
-
-// SO: need to add passData creation!
-router.post('/createWorker', (req, res) => {
-    const worker = req.body;
-    const skills = parseStringToArray(worker.skills);
-
-    workerModel.create({ 
-        firstName: worker.firstName,
-        secondName: worker.secondName,
-        lastName: worker.lastName,
-        age: worker.age,
-        district: worker.district,
-        position: worker.position,
-        skills: [...skills],
-        phoneNumber: worker.phoneNumber,
-    }, (err, worker) => {
-        if (err) {
-            console.log(err);
-            return;
-        }
-
-        res.send(`Successfully created: ${worker}`);
-    });
-});
-
-router.get('/getPassData', (req, res) => {
-    
-})
+router.use('/getAllWorkers', getAllWorkers);
+router.use('/getPassData', getPassData);
+router.use('/createWorker', createWorker);
 
 module.exports = router;

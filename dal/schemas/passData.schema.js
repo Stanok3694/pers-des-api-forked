@@ -2,6 +2,7 @@ const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
 const workerPassportData = new Schema({
+    workerId: String,
     firstName: String,
     secondName: String,
     lastName: String,
