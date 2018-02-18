@@ -1,10 +1,7 @@
-const express = require('express')
-const router = express.Router();
+const router = require('express').Router();
 
-const workerModel = require('../dal/models/worker.model');
-const prepareWorkersData = require('../middleware/prepareWorkersData');
-const checkResults = require('../middleware/checkResults');
-const parseStringToArray = require('../middleware/parseStringToArray');
+import { workerModel } from "../dal";
+import { checkResults, prepareWorkersData, parseStringToArray } from "../middleware";
 
 router.get('/', (req, res) => {
     res.send('You are in the workers section');
