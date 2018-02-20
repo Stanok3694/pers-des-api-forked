@@ -5,11 +5,7 @@ import { checkResults, parseStringToArray, } from "../../../middleware";
 
 router.post('/', (req, res) => {
     const worker = req.body;
-    const skills = parseStringToArray(worker.skills);
-    
     const passData = worker.passData;
-    const works = parseStringToArray(passData.works);
-    const payments = parseStringToArray(passData.payments);
 
     workerBaseModel.create({ 
         firstName: worker.firstName,
@@ -18,7 +14,7 @@ router.post('/', (req, res) => {
         age: worker.age,
         district: worker.district,
         position: worker.position,
-        skills: [...skills],
+        skills: worker.skills,
         phoneNumber: worker.phoneNumber,
     }, (err, worker) => {
         if (err) {
@@ -37,8 +33,8 @@ router.post('/', (req, res) => {
             codeOfPassportTable: passData.codeOfPassportTable,
             passportStartDate: passData.passportStartDate,
             relationship: passData.relationship,
-            works: [...works],
-            payments: [...payments],
+            works: passData.works,
+            payments: passData.payments,
         }, (err, passData) => {
             if (err) {
                 console.log(err);
