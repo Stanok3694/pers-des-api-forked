@@ -29,5 +29,5 @@ app.use((req, res, next) => {
 });
 
 app.listen(3001, () => {
-    console.log('Rest Api is on 3000 port!');
+    console.log('Rest Api is on 3001 port!');
 });

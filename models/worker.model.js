@@ -1,7 +1,7 @@
 const Schema = require('mongoose').Schema;
-const Model = require('mongoose').model;
+const mongoose = require('mongoose');
 
-const Worker = new Schema({
+const workerSchema = new Schema({
     // SO: required fields below
     names: String,
     age: Number,
@@ -21,6 +21,6 @@ const Worker = new Schema({
     payments: Array,
 });
 
-const workerBaseModel = Model('worker', Worker);
+const workerModel = mongoose.model('workerModel', workerSchema);
 
 module.exports = workerModel;

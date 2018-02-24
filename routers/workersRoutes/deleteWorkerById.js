@@ -1,11 +1,11 @@
 const router = require('express').Router();
 
 import { worker, } from "../../models";
-import { checkResults, } from "../../../middleware";
+import { checkResults, } from "../../middleware";
 
 router.delete('/', (req, res) => {
     const workerId = req.body.workerId;
-    
+
     worker.findByIdAndRemove(workerId, err => {
         if (err) {
             console.log(err);

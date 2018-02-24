@@ -1,4 +1,4 @@
-const workerBaseModel = require('./worker.model');
+const workerModel = require('./worker.model');
 
 export {
     workerModel as worker,
