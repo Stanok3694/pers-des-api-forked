@@ -8,6 +8,8 @@ const workerSchema = new Schema({
     district: String,
     phoneNumber: String,
     position: String,
+    inShift: Boolean,
+    notes: String,
     // SO: optional fields below
     shifts: Number, // SO: "Смены"
     gender: String,

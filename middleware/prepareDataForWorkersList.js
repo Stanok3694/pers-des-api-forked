@@ -8,6 +8,7 @@ const prepareWorkersData = (workers) => {
             district: w.district,
             position: w.position,
             shifts: w.shifts,
+            notes: w.notes,
         };
     });
 }

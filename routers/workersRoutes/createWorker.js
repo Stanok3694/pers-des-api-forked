@@ -13,6 +13,8 @@ router.post('/', (req, res) => {
         district: workerData.district,
         phoneNumber: workerData.phoneNumber,
         position: workerData.position,
+        inShift: workerData.inShift,
+        notes: workerData.notes,
         // SO: check fields below on existing?
         shifts: passData.shifts ? passData.shifts : 0, // SO: what about case when worker are renewal? <- need to ask Vladimir
         gender: passData.gender,
