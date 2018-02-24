@@ -4,7 +4,7 @@ import { worker, } from "../../models";
 import { checkResults, } from "../../middleware";
 
 router.delete('/', (req, res) => {
-    const workerId = req.body.workerId;
+    const workerId = req.query.workerId;
 
     worker.findByIdAndRemove(workerId, err => {
         if (err) {
