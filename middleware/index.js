@@ -1,7 +1,7 @@
 const checkResults = require('./checkResults');
-const prepareWorkersData = require('./prepareWorkersData');
+const prepareDataForWorkersList = require('./prepareDataForWorkersList');
 
 export {
     checkResults,
-    prepareWorkersData,
+    prepareDataForWorkersList,
 }
