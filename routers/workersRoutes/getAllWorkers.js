@@ -1,7 +1,7 @@
 const router = require('express').Router();
 
-import { workerBaseModel, } from "../../../dal";
-import { prepareWorkersData, checkResults, } from "../../../middleware";
+import { worker, } from "../../models";
+import { prepareWorkersData, checkResults, } from "../../middleware";
 
 router.get('/', (req, res) => {
     // SO: need to think about rework that from callback to promise!
