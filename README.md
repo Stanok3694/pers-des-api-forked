@@ -5,7 +5,7 @@ This is back-end for personal-desicions app. Several REST API methods and connec
 ToDo (most important):
 
 1.	add updateWorker method;
-2.	rework schema and model for more consistent + faster loading and decrease callback-hell <- one model: workerModel;
+2.	DONE: rework schema and model...;
 3.	functionality which is related with "Объект" entity.
 
 Nice to have: 
