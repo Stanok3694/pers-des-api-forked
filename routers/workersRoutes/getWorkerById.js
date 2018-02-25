@@ -1,7 +1,7 @@
 const router = require('express').Router();
 
 import { worker, } from "../../models";
-import { checkResults, } from "../../middleware";
+import { checkResults, prepareProfileData} from "../../middleware";
 
 router.post('/', (req, res) => {
     const workerId = req.body.workerId;
@@ -12,7 +12,7 @@ router.post('/', (req, res) => {
             return;
         }
 
-        const result = workerData; // SO: need to post-process? ToDo!
+        const result = prepareProfileData(workerData); // SO: need to post-process? ToDo!
         res.send(checkResults(result));
     });
 });

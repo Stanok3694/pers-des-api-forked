@@ -8,16 +8,17 @@ const workerSchema = new Schema({
     district: String,
     phoneNumber: String,
     position: String,
-    inShift: Boolean,
     notes: String,
+    status: String,
     // SO: optional fields below
     shifts: Number, // SO: "Смены"
     gender: String,
     dateOfBirth: Date,
+    birthPlace: String,
+    serialNumber: String,
     passportTable: String,
     codeOfPassportTable: String,
     passportStartDate: Date,
-    relationship: String,
     address: String,
     works: Array, // SO: что делал раньше, на каких объектах работал? <- need to ask Vladimir
     payments: Array,

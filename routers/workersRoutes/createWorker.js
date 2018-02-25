@@ -5,26 +5,27 @@ import { checkResults, } from "../../middleware";
 
 router.post('/', (req, res) => {
     const workerData = req.body;
+    const baseData = workerData.baseData;
     const passData = workerData.passData;
 
     worker.create({
-        names: workerData.names,
-        age: workerData.age,
-        district: workerData.district,
-        phoneNumber: workerData.phoneNumber,
-        position: workerData.position,
-        inShift: workerData.inShift,
-        notes: workerData.notes,
+        names: baseData.names,
+        age: baseData.age,
+        district: baseData.district,
+        phoneNumber: baseData.phoneNumber,
+        position: baseData.position,
+        notes: baseData.notes,
+        status: baseData.status,
         // SO: check fields below on existing?
-        shifts: passData.shifts ? passData.shifts : 0, // SO: what about case when worker are renewal? <- need to ask Vladimir
         gender: passData.gender,
         dateOfBirth: passData.dateOfBirth,
+        birthPlace: passData.birthPlace,
+        serialNumber: passData.serialNumber,
         passportTable: passData.passportTable,
         codeOfPassportTable: passData.codeOfPassportTable,
         passportStartDate: passData.passportStartDate,
-        relationship: passData.relationship,
-        works: passData.works,
-        payments: passData.payments,
+        works: workerData.works,
+        payments: workerData.payments,
     }, (err, worker) => {
         if (err) {
             console.log(err);
