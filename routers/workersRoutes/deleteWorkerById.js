@@ -1,7 +1,6 @@
 const router = require('express').Router();
 
 import { worker, } from "../../models";
-import { checkResults, } from "../../middleware";
 
 router.delete('/', (req, res) => {
     const workerId = req.query.workerId;
