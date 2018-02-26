@@ -12,7 +12,7 @@ router.post('/', (req, res) => {
             return;
         }
 
-        const result = prepareProfileData(workerData);
+        const result = workerData;
         res.send(checkResults(result));
     });
 });
