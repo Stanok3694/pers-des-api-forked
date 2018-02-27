@@ -15,7 +15,7 @@ mongoose
         console.log(`Successfully connected with MongoDB`)
     })
     .catch(e => {
-        console.log('Cannot connect with MongoDb');
+        console.log('Cannot connect with MongoDB');
     });
 
 app.use((req, res, next) => {
