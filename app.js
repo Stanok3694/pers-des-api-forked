@@ -43,5 +43,5 @@ app.use((req, res, next) => {
 const port = process.env.port || 3001;
 
 app.listen(port, () => {
-    console.log('Rest Api is live on 3001 port!');
+    console.log(`Rest Api is live on ${port} port!`);
 });
