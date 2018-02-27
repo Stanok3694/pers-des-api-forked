@@ -5,10 +5,13 @@ const mongoose = require('mongoose');
 const entry = require('./routers/entry');
 
 // SO: need move localhost url to server.config.js
+
+const mongoDbUrl = 'mongodb://admin:admin001@ds151348.mlab.com:51348/heroku_1jn14n2f' || 'mongodb://localhost:27017';
+
 mongoose
-    .connect('mongodb://localhost:27017')
+    .connect(mongoDbUrl)
     .then(response => {
-        console.log(`Successfully connected with MongoDB on 27017 port`)
+        console.log(`Successfully connected with MongoDB`)
     })
     .catch(e => {
         console.log('Cannot connect with MongoDB');
