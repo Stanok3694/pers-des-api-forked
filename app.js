@@ -40,7 +40,7 @@ app.use((req, res, next) => {
     res.status(404).send('Sorry, cannot find anything by this route!');
 });
 
-const port = process.env.port || 3001;
+const port = process.env.PORT || 3001;
 
 app.listen(port, () => {
     console.log(`Rest Api is live on ${port} port!`);
