@@ -5,11 +5,19 @@ const mongoose = require('mongoose');
 const entry = require('./routers/entry');
 
 // SO: need move localhost url to server.config.js
-mongoose.connect('mongodb://localhost:27017');
+mongoose
+    .connect('mongodb://localhost:27017')
+    .then(response => {
+        console.log(`Successfully connected with MongoDB on 27017 port`)
+    })
+    .catch(e => {
+        console.log('Cannot connect with MongoDB');
+    });
 
 app.use((req, res, next) => {
     res.header("Access-Control-Allow-Origin", "*");
     res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
+    res.header("Access-Control-Allow-Methods", "GET, POST, OPTIONS, PUT, DELETE");
     next();
 });
 
@@ -29,5 +37,5 @@ app.use((req, res, next) => {
 });
 
 app.listen(3001, () => {
-    console.log('Rest Api is on 3000 port!');
+    console.log('Rest Api is live on 3001 port!');
 });

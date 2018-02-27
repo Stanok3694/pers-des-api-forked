@@ -1,9 +1,9 @@
 const checkResults = require('./checkResults');
-const prepareWorkersData = require('./prepareWorkersData');
-const parseStringToArray = require('./parseStringToArray');
+const prepareDataForWorkersList = require('./prepareDataForWorkersList');
+const prepareProfileData = require('./prepareProfileData');
 
 export {
     checkResults,
-    parseStringToArray,
-    prepareWorkersData,
+    prepareDataForWorkersList,
+    prepareProfileData,
 }
