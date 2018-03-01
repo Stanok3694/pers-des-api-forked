@@ -22,7 +22,7 @@ const prepareProfilePassData = (worker) => {
         },
         {
             key: "Дата выдачи",
-            value: new Date(worker.passportStartDate).toLocaleDateString('en-GB'),
+            value: worker.passportStartDate,
         },
         {
             key: "Код подразделения",
