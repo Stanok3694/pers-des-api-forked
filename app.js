@@ -7,7 +7,7 @@ const entry = require('./routers/entry');
 // SO: need move localhost url to server.config.js
 
 const mongoDbUrl = 'mongodb://admin:admin001@ds151348.mlab.com:51348/heroku_1jn14n2f'; 
-// || 'mongodb://localhost:27017';
+const localMongo = 'mongodb://localhost:27017';
 
 mongoose
     .connect(mongoDbUrl)
