@@ -6,7 +6,7 @@ const prepareProfilePassData = (worker) => {
         },
         {
             key: "Дата рождения",
-            value: new Date(worker.dateOfBirth).toLocaleDateString('en-GB'),
+            value: worker.dateOfBirth !== null & worker.dateOfBirth !== undefined ? new Date(worker.dateOfBirth).toLocaleDateString('en-GB') : null,
         },
         {
             key: "Место рождения",
@@ -22,7 +22,7 @@ const prepareProfilePassData = (worker) => {
         },
         {
             key: "Дата выдачи",
-            value: new Date(worker.passportStartDate).toLocaleDateString('en-GB'),
+            value: worker.passportStartDate !== null && worker.passportStartDate !== undefined ? new Date(worker.passportStartDate).toLocaleDateString('en-GB') : null,
         },
         {
             key: "Код подразделения",
