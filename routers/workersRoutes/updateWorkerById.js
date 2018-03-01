@@ -14,7 +14,7 @@ router.put('/', (req, res) => {
             return;
         }
 
-        res.send(`worker ${workerId} successfully updated!`);
+        res.send(`worker ${workerId} successfully updated`);
     })
 });
 
