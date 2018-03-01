@@ -18,12 +18,12 @@ router.post('/', (req, res) => {
         status: baseData.status,
         // SO: check fields below on existing?
         gender: passData.gender,
-        dateOfBirth: passData.dateOfBirth,
+        dateOfBirth: passData.dateOfBirth ? passData.dateOfBirth : null,
         birthPlace: passData.birthPlace,
         serialNumber: passData.serialNumber,
         passportTable: passData.passportTable,
         codeOfPassportTable: passData.codeOfPassportTable,
-        passportStartDate: passData.passportStartDate,
+        passportStartDate: passData.passportStartDate ? passData.passportStartDate : null,
         works: workerData.works,
         payments: workerData.payments,
     }, (err, worker) => {
