@@ -2,15 +2,12 @@ const app = require('express')();
 const bodyParser = require('body-parser');
 const mongoose = require('mongoose');
 
+const dbConfig = require('./db.config');
 const entry = require('./routers/entry');
 
-// SO: need move localhost url to server.config.js
-
-const mongoDbUrl = 'mongodb://admin:admin001@ds151348.mlab.com:51348/heroku_1jn14n2f'; 
-const localMongo = 'mongodb://localhost:27017';
-
+// SO: config for prod
 mongoose
-    .connect(mongoDbUrl)
+    .connect(dbConfig.mongoDbUrl)
     .then(response => {
         console.log(`Successfully connected with MongoDB`)
     })
