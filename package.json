@@ -4,7 +4,8 @@
   "description": "",
   "main": "app.js",
   "scripts": {
-    "start": "node start.js"
+    "start": "node start.js",
+    "jest": "jest"
   },
   "repository": {
     "type": "git",
@@ -21,9 +22,7 @@
     "express": "^4.16.2",
     "mongoose": "^5.0.4",
     "babel-register": "^6.26.0",
-    "babel-preset-env": "^1.6.1"
-  },
-  "devDependencies": {
+    "babel-preset-env": "^1.6.1",
     "jest": "^22.3.0"
   }
 }

@@ -1,5 +1,5 @@
 const checkReslts = require('../checkResults');
-const noResultsMessage = "You have no data in database";
+const noResultsMessage = "В базе данных нет информации по данному запросу!";
 
 const zeroArr = [];
 const nonZeroArr = ["test"];

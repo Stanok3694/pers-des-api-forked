@@ -1,4 +1,4 @@
-const prepareWorkersData = require('../prepareWorkersData');
+const prepareWorkersData = require('../prepareDataForWorkersList');
 
 const workers = [
     {
@@ -6,26 +6,25 @@ const workers = [
         _id: 'test',
         age: 34,
         district: "Avtozavodskii",
-        firstName: "Ivan",
-        lastName: "Ivanov",
+        names: "Ivanov Ivan Ivanovich",
         phoneNumber: "8-800-555-35-35",
         position: "simple worker",
-        secondName: "Ivanovich",
         skills: ["drinking", "smoking"],
+        notes: "Nice guy",
+        status: "Не в смене"
     }
 ];
 
 const preparedWorkers = [
     {
-        id: 0,
-        firstName: "Ivan",
-        secondName: "Ivanovich",
-        lastName: "Ivanov",
+        id: "test",
+        names: "Ivanov Ivan Ivanovich",
         phoneNumber: "8-800-555-35-35",
         position: "simple worker",
         age: 34,
         district: "Avtozavodskii",
-        skills: ["drinking", "smoking"],
+        notes: "Nice guy",
+        status: "Не в смене"
     }
 ];
 
