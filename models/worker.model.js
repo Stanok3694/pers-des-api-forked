@@ -2,7 +2,8 @@ const Schema = require('mongoose').Schema;
 const mongoose = require('mongoose');
 
 const workerSchema = new Schema({
-    // SO: required fields below
+    order: Number,
+
     names: String,
     age: Number,
     district: String,
@@ -10,7 +11,7 @@ const workerSchema = new Schema({
     position: String,
     notes: String,
     status: String,
-    // SO: optional fields below
+    
     shifts: Number, // SO: "Смены"
     gender: String,
     dateOfBirth: Date,
