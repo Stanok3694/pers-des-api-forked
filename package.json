@@ -5,7 +5,8 @@
   "main": "app.js",
   "scripts": {
     "start": "node start.js",
-    "jest": "jest"
+    "jest": "jest",
+    "prod": "git push production HEAD:master"
   },
   "repository": {
     "type": "git",
