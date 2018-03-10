@@ -1,8 +1,8 @@
-import { worker, } from "../../models";
+import { worker, } from "../models";
 const fs = require('fs');
 
 const restoreBackupFromFile = (backupName) => {
-    fs.readFile(backupName, 'utf8', function readFileCallback(err, data) {
+    fs.readFile(`./migrations/${backupName}`, 'utf8', function readFileCallback(err, data) {
         if (err) {
             console.log(err);
             return;
