@@ -1,6 +1,6 @@
 const router = require('express').Router();
-
 import { worker, } from "../../models";
+import { getOrderFromNotes, } from "../../middleware";
 
 router.post('/', (req, res) => {
     const modelName = req.body.modelName;
@@ -8,17 +8,25 @@ router.post('/', (req, res) => {
     if (modelName !== 'worker') {
         return;
     } else {
-        worker.update({},
-            { order: null }, { multi: true },
-            (err, worker) => {
-                if (err) {
-                    console.log(err);
-                    return;
+        worker.find().lean().exec((err, workers) => {
+            const targets = workers.map(w => {
+                return {
+                    id: w._id,
+                    order: getOrderFromNotes(w.notes)
                 }
-
-                res.send(`Successfully added worker field: order!`);
             });
 
+            targets.forEach(target => {
+                worker.findByIdAndUpdate(target.id, { order: target.order }, (err, worker) => {
+                    if (err) {
+                        console.log(err);
+                        return;
+                    }
+                });
+            });
+
+            res.send("Collection successfully updated!");
+        });
     }
 });
 
