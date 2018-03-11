@@ -1,6 +1,10 @@
 const prepareProfileBaseData = (worker) => {
     const primaryBaseData = [
         {
+            key: "Номер анкеты",
+            value: worker.order,
+        },
+        {
             key: "ФИО", 
             value: worker.names,
         },
