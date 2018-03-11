@@ -9,6 +9,7 @@ router.post('/', (req, res) => {
     const passData = workerData.passData;
 
     worker.create({
+        order: baseData.order,
         names: baseData.names,
         age: baseData.age,
         district: baseData.district,
