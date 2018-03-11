@@ -2,6 +2,7 @@ const prepareWorkersData = (workers) => {
     return workers.map((w, index) => {
         return {
             id: w._id,
+            order: w.order,
             names: w.names,
             phoneNumber: w.phoneNumber,
             age: w.age,
