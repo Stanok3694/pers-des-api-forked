@@ -17,7 +17,9 @@ router.post('/', (req, res) => {
         position: baseData.position,
         notes: baseData.notes,
         status: baseData.status,
-        // SO: check fields below on existing?
+        
+        citizenship: passData.citizenship,
+        typeOfDoc: passData.typeOfDoc,
         gender: passData.gender,
         dateOfBirth: passData.dateOfBirth ? passData.dateOfBirth : null,
         birthPlace: passData.birthPlace,

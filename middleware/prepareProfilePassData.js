@@ -28,6 +28,14 @@ const prepareProfilePassData = (worker) => {
             key: "Код подразделения",
             value: worker.codeOfPassportTable,
         },
+        {
+            key: "Тип документа",
+            value: worker.typeOfDoc,
+        },
+        {
+            key: "Гражданство",
+            value: worker.citizenship,
+        },
     ];
 
     return passData;

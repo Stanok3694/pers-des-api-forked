@@ -11,8 +11,10 @@ const workerSchema = new Schema({
     position: String,
     notes: String,
     status: String,
-    
     shifts: Number, // SO: "Смены"
+    
+    citizenship: String,
+    typeOfDoc: String,
     gender: String,
     dateOfBirth: Date,
     birthPlace: String,
@@ -21,6 +23,7 @@ const workerSchema = new Schema({
     codeOfPassportTable: String,
     passportStartDate: Date,
     address: String,
+    
     works: Array, // SO: что делал раньше, на каких объектах работал? <- need to ask Vladimir
     payments: Array,
 });
